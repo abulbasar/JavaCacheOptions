@@ -10,12 +10,6 @@
 - distributed cache is not required
 
 
-## Test scenario 
-- 1 million records insert and fetch 
-- key and value are serialized as bytes
-- key is int 
-- value is a string of 1000 random bytes
-
 
 ## Measure
 - write eps
@@ -32,5 +26,12 @@
  |Hazelcast Dist Cache  | | | |
  |MapDB Cache           | | | |
  |RocksDB Cache         | | | |
+ |EHCache Cache         | | | |  
+ |Caffeine Cache         | | | |  
   
-    
+
+ ## Test scenario 
+ - 1 million records write and read 2 times 
+ - key and value are serialized as bytes
+ - key is int 
+ - value is a string of 1000 random bytes   

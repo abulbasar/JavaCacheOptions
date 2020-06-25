@@ -52,9 +52,11 @@ public class GuavaCacheApp {
 
     public void benchmarkRead(int count) throws ExecutionException {
         long startTime = System.currentTimeMillis();
+        String s;
         for (int i = 0; i < count; i++) {
             byte[] value = get(Common.toBytes(i));
-            //assert new String(value).length() == 1000;
+            s = new String(value);
+            assert s.length() == 1000;
         }
         long eps = count * 1000 / (System.currentTimeMillis() - startTime);
         logInfo("Read EPS: " + eps);
